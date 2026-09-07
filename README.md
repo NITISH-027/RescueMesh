@@ -163,7 +163,7 @@ npm run dev
 
 ## 👥 Authors & Team
 
-* **Team Name:** [Your Team Name]
+* **Team Name:** Vulcan
 * **Institution:** Sri Sairam Engineering College
 * **Competition:** Intellect Hack 2026
 * **Track:** Track 04 — AI for Space & Earth Intelligence
