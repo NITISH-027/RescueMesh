@@ -1,0 +1,85 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0A0B0E;
+    --surface: #0F1115;
+    --surface-card: rgba(24, 26, 32, 0.70);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.16);
+  }
+
+  body {
+    background-color: #0A0B0E;
+    color: #F4F4F5;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Minimalist Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* MapLibre Canvas reset */
+.maplibregl-canvas {
+  outline: none;
+}
+
+.maplibregl-ctrl-bottom-right,
+.maplibregl-ctrl-bottom-left {
+  display: none !important;
+}
+
+/* Tactical GIS Marker Styling */
+.tactical-marker {
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.tactical-marker:hover {
+  transform: scale(1.12);
+  z-index: 50;
+}
+
+@keyframes ping-subtle {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  60% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.marker-pulse-ring {
+  animation: ping-subtle 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
